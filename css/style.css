@@ -107,24 +107,51 @@ footer{
 
 /* Step 1: Write selector/rule property to add an underline when
 links in the navigation are in the hover or focus state.*/
-
+li:hover {
+  text-decoration-line: underline;
+}
 
 
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
+/* hide the skip to main */
+.skip {
+  position: absolute;
+  top: 40px;
+  overflow: hidden;
+}
 
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
-
+/* when that element takes focus by hitting tab, we want to see the skip to main */
+.skip:focus {
+  position: static;
+  top: -20px;
+}
 
 /* Step 3: Write selector/rule property to style all elements when in focus*/
-
+/* universal selector - any element that is focus: style those! */
+*focus {
+  border-style: solid;
+  border-width: 2px 2px;
+}
 
 
 /* Step 4: Write selector/rule property to style the container */
+.container {
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-row-gap: 15px;
+}
 
 
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
+/* use the first child selector: select first div in the grid - and give that first div the background image */
+div > about {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  background-image: "images/header.jpg";
+}
 
 
 
@@ -132,23 +159,117 @@ first div in the grid  and place it in the grid. */
  four rows in the grid. */
 
       /*This will be a lot of rules.... but be strategic and combine seletors*/
+  .about {
+    grid-column: 2 / span 1;
+    grid-row: 2
+  }
+
+  .method {
+    grid-column: 2 / span 1;
+    grid-row: 3
+  }
+
+  .clients {
+    grid-column: 2 / span 1;
+    grid-row: 4
+  }
+
+  .contact {
+    grid-column: 2 / span 1;
+    grid-row: 5
+  }
+
+  .about-image {
+    grid-column: auto / auto;
+    max-height: 600px;
+    overflow: hidden;
+    grid-row: 2;
+  }
+
+  .method-image {
+    grid-column: auto / auto;
+    max-height: 600px;
+    overflow: hidden;
+    grid-row: 3;
+  }
+
+  .clients-image {
+    grid-column: auto / auto;
+    max-height: 600px;
+    overflow: hidden;
+    grid-row: 4;
+  }
+
+  .contact-image {
+    grid-column: auto / auto;
+    max-height: 600px;
+    overflow: hidden;
+    grid-row: 5;
+  }
 
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
+ .text-block {
+  /* google: how to horizontally align text in css? */ horizontal-align: center;
+  vertical-align: center;
+  text-align: center;
+ }
 
 
 /* Add your media query here */
+@media screen and (min-width: 800px) {}
 
 
   /* Step 9: Write the selector/rule property to style the nav element */
+  nav {
+    align-content: end;
+    padding: 30px 0px 30px 0px;
+  }
 
  
   /* Step 10: Write the selector/rule property to update the .container class */
+  .container {
+    display: grid;
+    grid-template-columns: 50px, auto, 500px, auto, 50px;
+  }
 
 
   /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
+  .about {
+    grid-column: 3 / span 2;
+  }
+
+  .clients {
+    grid-column: 3 / span 2;
+  }
+
+  .method-image {
+    grid-column: 3 / span 2;
+  }
+
+  .contact-image {
+    grid-column: 3 / span 2;
+  }
+
+  .method {
+    grid-column: 2 / span 2;
+  }
+
+  .contact {
+    grid-column: 2 / span 2;
+  }
+
+  .about-image {
+    grid-column: 2 / span 2;
+  }
+
+  .clients-image {
+    grid-column: 2 / span 2;
+  }
 
 
 
  /* Step 13:Write the selector/rule property to update the .text-block class */
-
+ .text-block {
+  max-height: 250px;
+ }
