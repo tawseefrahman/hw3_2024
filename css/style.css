@@ -210,7 +210,6 @@ div > about {
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
  .text-block {
-  /* google: how to horizontally align text in css? */ horizontal-align: center;
   vertical-align: center;
   text-align: center;
  }
