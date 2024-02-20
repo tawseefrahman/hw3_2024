@@ -114,23 +114,22 @@ li:hover {
 
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
 /* hide the skip to main */
-.skip {
+.skip a {
   position: absolute;
-  top: 40px;
+  top: -40px;
   overflow: hidden;
 }
 
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
 /* when that element takes focus by hitting tab, we want to see the skip to main */
-.skip:focus {
+.skip a:focus {
   position: static;
-  top: -20px;
+  top: 20px;
 }
 
 /* Step 3: Write selector/rule property to style all elements when in focus*/
-/* universal selector - any element that is focus: style those! */
-*focus {
+*:focus {
   border-style: solid;
   border-width: 2px 2px;
 }
